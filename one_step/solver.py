@@ -11,7 +11,7 @@ def solution(x0, y0, h, xn, f_ind, eps, c, step, name, p):
 	while True:
 		x = x0
 		y = y0
-		print(f'{name} порядка с шагом {h1}:\n|\tx\t|\ty\t|\ty_p\t|\tdiff\t|')
+		print(f'{name} с шагом {h1}:\n|\tx\t|\ty\t|\ty_p\t|\tdiff\t|')
 		if len(y_arr):
 			yn = y_arr[-1]
 		y_arr = []
