@@ -22,7 +22,7 @@ def solution(x0, y0, h, xn, f_ind, eps, c, step, name, p):
 			y_arr.append(y)
 			x, y = step(equations.derivatives[f_ind], h1, x, y)
 		if yn is not None:
-			runge = abs(yn - y_arr[-1]) / (2 ** p -1)
+			runge = abs(yn - y_arr[-1]) / (2 ** p - 1)
 		print(f'y^h={yn}, y^h/2={y_arr[-1]}')
 		if runge <= eps:
 			print('Достигнута нужная точность')
