@@ -7,7 +7,7 @@ import multi_step.miln
 # Это будет вводиться с клавиатуры
 f_ind = 1
 x0 = 0
-xn = 2
+xn = 1
 y0 = 1
 h = 0.1
 eps = 0.01
