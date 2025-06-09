@@ -1,18 +1,26 @@
+import sys
+
 import equations
 import graph
 import one_step.euler
 import one_step.rk4
 import multi_step.miln
 
-# Это будет вводиться с клавиатуры
-f_ind = 1
-x0 = 0
-xn = 1
-y0 = 1
-h = 0.1
-eps = 0.01
+for i in range(len(equations.text_der)):
+	print(f'{i}: {equations.text_der[i]}')
+f_ind = int(input('Введите номер уравнения: '))
+if f_ind < 0 or f_ind > len(equations.text_der):
+	print('Значение вне промежутка!')
+	sys.exit(-1)
+x0 = float(input('Начальная точка x0 = '))
+xn = float(input('Конечная точка xn = '))
+if xn <= x0:
+	print('xn должен быть больше x0!')
+	sys.exit(-1)
+y0 = float(input('Значение в начальной точке y0 = '))
+h = float(input('Шаг h = '))
+eps = float(input('Точность eps = '))
 
-# Это будем использовать
 precise_f = equations.precise[f_ind]
 c = y0 - precise_f(x0, y0, 0)
 
