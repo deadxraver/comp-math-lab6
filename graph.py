@@ -24,7 +24,10 @@ def add_function(func, interval, label=None, color=None):
 			 zorder=1)
 
 
-def add_points(x_arr, y_arr, label=None, color='red', marker_size=5):
+def add_points(x_arr, y_arr, label=None, color='red'):
+	marker_size = 300 / len(x_arr)
+	if marker_size > 10:
+		marker_size = 10
 	x_points = np.array(x_arr)
 	y_points = np.array(y_arr)
 	plt.plot(x_points, y_points,
