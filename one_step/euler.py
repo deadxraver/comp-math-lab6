@@ -2,7 +2,7 @@ import equations
 
 
 def step(f, h, x, y):
-	return x + h, y + h * f(x)
+	return x + h, y + h * f(x, y)
 
 def solution(x0, y0, h, xn, f_ind, eps, c):
 	h1 = h
@@ -20,7 +20,7 @@ def solution(x0, y0, h, xn, f_ind, eps, c):
 		y_arr = []
 		x_arr = []
 		while x <= xn:
-			print(f'|\t{x:.1f}\t|\t{y:.1f}\t|\t{precise_f(x, c):.1f}\t|\t{abs(precise_f(x, c) - y):.3f}\t|')
+			print(f'|\t{x:.1f}\t|\t{y:.1f}\t|\t{precise_f(x, y, c):.1f}\t|\t{abs(precise_f(x, y, c) - y):.3f}\t|')
 			x_arr.append(x)
 			y_arr.append(y)
 			x, y = step(equations.derivatives[f_ind], h1, x, y)
