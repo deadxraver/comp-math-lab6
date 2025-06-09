@@ -15,7 +15,7 @@ precise_f = equations.precise[f_ind]
 c = y0 - precise_f(x0, 0)
 
 graph.create_plot()
-graph.add_function(lambda x: precise_f(x, c), [x0, xn], label='Точное', color='red')
+graph.add_function(lambda x: precise_f(x, c), [x0, xn], label=f'Точное, {equations.text_precise[f_ind]}', color='red')
 euler_x_arr, euler_y_arr = one_step.euler.solution(x0, y0, h, xn, f_ind, eps, c)
 
 
